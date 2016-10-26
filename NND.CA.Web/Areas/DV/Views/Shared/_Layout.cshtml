@@ -1,0 +1,38 @@
+﻿@* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. *@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <base target="_self">
+    <title>Visual Process Flow</title>
+    @Styles.Render("~/Content/DV")
+	@*<script src="~/Scripts/JQueryUI/jquery-1.11.1.js"></script>*@
+    @Scripts.Render("~/bundles/jquery")
+    <script>
+
+        function EventListenter_VPF(area, controller, action) {
+            var siteUrl = window.parent.document.getElementById('hdnUrl').value;
+            var slash = "/";
+            siteUrl += area.length > 0 ? area : "";
+            siteUrl += controller.length > 0 ? slash + controller : "";
+            siteUrl += action.length > 0 ? slash + action : "";
+            window.parent.postMessage("isScreen" + " " + siteUrl, "*");
+        };
+        $(document).ready(function () {
+            $("[id^='collapse']").each(function (i, el) {
+                var aFind = $(el).find('a');
+                var tFind = $(el).find("[id^='Title']");
+                tFind.click(function () { aFind.toggle() });
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div id="DV" class="body-wrapper">
+
+        @RenderBody()
+
+    </div>
+</body>
+</html>

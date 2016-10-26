@@ -319,6 +319,20 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Columbus-DV\DV\NND.CA.DV.Web.csproj">
+      <Project>{f934046a-adc0-45d8-be26-e41107898f4d}</Project>
+      <Name>NND.CA.DV.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Columbus-Framework\Common\Sage.CA.SBS.ERP.Sage300.Common.Interfaces\Sage.CA.SBS.ERP.Sage300.Common.Interfaces.csproj">
+      <Project>{2df9d920-e05a-44fe-91c7-4fce7b3a2b28}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Columbus-Framework\Common\Sage.CA.SBS.ERP.Sage300.Common.Utilities\Sage.CA.SBS.ERP.Sage300.Common.Utilities.csproj">
+      <Project>{9ce25370-dc66-4d61-87b4-aed9a3dc7bd4}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
