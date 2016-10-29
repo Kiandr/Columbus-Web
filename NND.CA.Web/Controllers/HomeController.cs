@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Sage.CA.SBS.ERP.Sage300.Common.Web;
+using NND.CA.DV.Models;
 
 namespace NND.CA.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController<T> : BaseController <DVModel> where T : DVModel, new()
     {
         public ActionResult Index()
         {

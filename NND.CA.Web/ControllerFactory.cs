@@ -1,12 +1,15 @@
-﻿/* Copyright (c) 2014 Kian D.Rad Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
 
 #region
+
 using System.Web.Mvc;
 using System.Web.Routing;
+
 using Microsoft.Practices.Unity;
+
 #endregion
 
-namespace Sage.CA.SBS.ERP.Sage300.Web
+namespace NND.CA.Web
 {
     /// <summary>
     /// Class ControllerFactory.
@@ -16,7 +19,7 @@ namespace Sage.CA.SBS.ERP.Sage300.Web
         /// <summary>
         /// The _container
         /// </summary>
-        private readonly  IUnityContainer _container;
+        private readonly IUnityContainer _container;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ControllerFactory" /> class.
@@ -27,12 +30,12 @@ namespace Sage.CA.SBS.ERP.Sage300.Web
             _container = container;
         }
 
-        /// <summary>
-        /// Create Controller
-        /// </summary>
-        /// <param name="requestContext">Request Context</param>
-        /// <param name="controllerName">Controller Name</param>
-        /// <returns>IController</returns>
+        //    /// <summary>
+        //    /// Create Controller
+        //    /// </summary>
+        //    /// <param name="requestContext">Request Context</param>
+        //    /// <param name="controllerName">Controller Name</param>
+        //    /// <returns>IController</returns>
         public override IController CreateController(RequestContext requestContext, string controllerName)
         {
             IController controller;
@@ -72,6 +75,9 @@ namespace Sage.CA.SBS.ERP.Sage300.Web
             }
             return null;
         }
-
     }
 }
+
+
+
+   
