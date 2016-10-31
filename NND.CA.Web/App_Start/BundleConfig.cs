@@ -8,6 +8,8 @@ namespace NND.CA.Web
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            # region JS MainWebProject
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -22,13 +24,20 @@ namespace NND.CA.Web
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
+            #endregion
 
-
-
+            #region CSS MainWebProject
             // This is the css for the main project
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/DefaultMvc/bootstrap.css",
                       "~/Content/DefaultMvc/site.css"));
+            #endregion
+
+            #region Framework KendoUI Js
+            bundles.Add(new ScriptBundle("~/bundles/kendo").Include("~/Scripts/Kendo/kendo.all.min.js"));
+            #endregion
+
+
         }
     }
 }
