@@ -23,9 +23,12 @@ namespace NND.CA.Web
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+
+
+            // This is the css for the main project
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/DefaultMvc/bootstrap.css",
+                      "~/Content/DefaultMvc/site.css"));
         }
     }
 }
