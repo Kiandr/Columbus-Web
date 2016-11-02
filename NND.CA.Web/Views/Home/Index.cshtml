@@ -2,30 +2,121 @@
     ViewBag.Title = "Home Page";
 }
 
+@*Render KendoUI JS*@
+@Scripts.Render("~/bundles/kendoTrialDemo")
+@*~/bundles/jquer*@
+
+@*Render KendoUI Css*@
+
+
+
 <div class="jumbotron">
     <h1>ASP.NET</h1>
     <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
     <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+@(Html.Kendo().Map()
+    .Name("map")
+    .Center(30.268107, -97.744821)
+    .Zoom(3)
+    .Layers(layers =>
+    {
+        layers.Add()
+            .Type(MapLayerType.Tile)
+            .UrlTemplate("http://#= subdomain #.tile.openstreetmap.org/#= zoom #/#= x #/#= y #.png")
+            .Subdomains("a", "b", "c")
+            .Attribution("&copy; <a href='http://osm.org/copyright'>OpenStreetMap contributors</a>");
+    })
+    .Markers(markers =>
+    {
+        markers.Add()
+            .Location(30.268107, -97.744821)
+            .Shape(MapMarkersShape.PinTarget)
+            .Tooltip(tooltip => tooltip.Content("Austin, TX"));
+    })
+)
+
+<div class="box wide">
+    <div class="box-col">
+        <h4>Bubble symbol</h4>
+        <ul id="select-symbol">
+            <li>Circle</li>
+            <li>Square</li>
+        </ul>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+    <div id="info" class="box-col"></div>
 </div>
+
+@(Html.Kendo().Map()
+    .Name("map")
+    .Center(45, 45)
+    .Zoom(4)
+    .MinZoom(3)
+    .Wraparound(false)
+    .Layers(layers =>
+    {
+        layers.Add()
+            .Type(MapLayerType.Tile)
+            .UrlTemplate("http://#= subdomain #.tile.openstreetmap.org/#= zoom #/#= x #/#= y #.png")
+            .Subdomains("a", "b", "c")
+            .Attribution("&copy; <a href='http://osm.org/copyright'>OpenStreetMap contributors</a>");
+
+        layers.Add()
+            .Type(MapLayerType.Bubble)
+            .Style(style => style
+                .Fill(fill => fill.Color("#00f").Opacity(0.4))
+                .Stroke(stroke => stroke.Width(0))
+            )
+            .DataSource(dataSource => dataSource
+                  .Read(read => read.Action("_UrbanAreas", "Map"))
+            )
+            .LocationField("Location")
+            .ValueField("Pop2010");
+    })
+    .Events(events => events
+        .ShapeMouseEnter("onShapeMouseEnter")
+        .Reset("onReset")
+    )
+)
+
+<script id="info-template" type="text/x-kendo-template">
+    <h4>#: City #, #= Country #</h4>
+    <p class="info">Population #= kendo.toString(Pop2010 * 1000, "N0") #</p>
+</script>
+
+<script id="empty-info-template" type="text/x-kendo-template">
+    <h4>Hover over urban areas</h4>
+    <p>&nbsp;</p>
+</script>
+
+<script>
+    var template = kendo.template($("#info-template").html());
+    var emptyTemplate = kendo.template($("#empty-info-template").html());
+    var activeShape;
+
+    function onShapeMouseEnter(e) {
+        if (activeShape) {
+            activeShape.options.set("stroke", null);
+        }
+
+        activeShape = e.shape;
+        activeShape.options.set("stroke", { width: 1.5, color: "#00f" });
+
+        $("#info").html(template(e.shape.dataItem));
+    }
+
+    function onReset() {
+        $("#info").html(emptyTemplate({}));
+        activeShape = null;
+    }
+
+    $("#select-symbol").kendoMobileButtonGroup({
+        select: function (e) {
+            var layer = $("#map").data("kendoMap").layers[1];
+            layer.options.symbol = e.index === 0 ? "circle" : "square";
+            layer.reset();
+        },
+        index: 0
+    });
+</script>

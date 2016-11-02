@@ -46,6 +46,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Kendo.Mvc">
+      <HintPath>..\..\..\..\Program Files (x86)\Telerik\UI for ASP.NET MVC R3 2016\wrappers\aspnetmvc\Binaries\Mvc5\Kendo.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -243,19 +246,16 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\DefaultMvc\bootstrap-theme.css" />
     <Content Include="Content\DefaultMvc\bootstrap-theme.min.css" />
     <Content Include="Content\DefaultMvc\bootstrap.css" />
     <Content Include="Content\DefaultMvc\bootstrap.min.css" />
     <Content Include="Content\DefaultMvc\Site.css" />
+    <Content Include="Content\Styles\Kendo\kendo.common.min.css" />
+    <Content Include="Content\Styles\Kendo\kendo.default.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\ai.0.22.19-build00125.js" />
     <Content Include="Scripts\ai.0.22.19-build00125.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -263,7 +263,34 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Scripts\Chroma\chroma.min.js" />
+    <Content Include="Scripts\DefaultMvc\jquery-1.10.2.min.map" />
+    <Content Include="Content\Styles\Kendo\common-template.less" />
+    <Content Include="Content\Styles\Kendo\kendo.common.less" />
+    <Content Include="Content\Styles\Kendo\kendo.default.less" />
+    <Content Include="Content\Styles\Kendo\theme-template.less" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\DefaultMvc\ai.0.22.19-build00125.js" />
+    <Content Include="Scripts\DefaultMvc\ai.0.22.19-build00125.min.js" />
+    <Content Include="Scripts\DefaultMvc\bootstrap.js" />
+    <Content Include="Scripts\DefaultMvc\bootstrap.min.js" />
+    <None Include="Scripts\DefaultMvc\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\DefaultMvc\jquery-1.10.2.js" />
+    <Content Include="Scripts\DefaultMvc\jquery-1.10.2.min.js" />
+    <None Include="Scripts\DefaultMvc\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\DefaultMvc\jquery.validate.js" />
+    <Content Include="Scripts\DefaultMvc\jquery.validate.min.js" />
+    <Content Include="Scripts\DefaultMvc\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\DefaultMvc\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\DefaultMvc\modernizr-2.6.2.js" />
+    <Content Include="Scripts\DefaultMvc\respond.js" />
+    <Content Include="Scripts\DefaultMvc\respond.min.js" />
+    <None Include="Scripts\DefaultMvc\_references.js" />
+    <Content Include="Scripts\DragandDrop\modernizr.custom.08307.js" />
+    <Content Include="Scripts\jasmine\boot.js" />
+    <Content Include="Scripts\jasmine\console.js" />
+    <Content Include="Scripts\jasmine\jasmine-html.js" />
+    <Content Include="Scripts\jasmine\jasmine.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -271,6 +298,167 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\JQueryUI\iframe-resizer-reports.js" />
+    <Content Include="Scripts\JQueryUI\iframeResizer.js" />
+    <Content Include="Scripts\JQueryUI\jquery.formparams.js" />
+    <Content Include="Scripts\JQueryUI\jquery.json.min.js" />
+    <Content Include="Scripts\JQueryUI\jquery.mask.min.js" />
+    <Content Include="Scripts\JQueryUI\jquery.menu-aim.js" />
+    <Content Include="Scripts\JQueryUI\jquery.numeric.js" />
+    <None Include="Scripts\JQueryUI\_references.js" />
+    <Content Include="Scripts\KendoTrialScripts\angular.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\jquery.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\jszip.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.all.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.angular.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.angular2.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.autocomplete.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.binder.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.button.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.calendar.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.color.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.colorpicker.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.columnmenu.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.columnsorter.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.combobox.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.core.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.data.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.data.odata.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.data.signalr.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.data.xml.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.dataviz.barcode.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.dataviz.chart.funnel.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.dataviz.chart.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.dataviz.chart.polar.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.dataviz.core.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.dataviz.diagram.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.dataviz.gauge.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.dataviz.map.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.dataviz.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.dataviz.mobile.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.dataviz.qrcode.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.dataviz.sparkline.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.dataviz.stock.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.dataviz.themes.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.dataviz.treemap.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.datepicker.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.datetimepicker.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.dialog.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.dom.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.draganddrop.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.drawing.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.dropdownlist.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.editable.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.editor.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.excel.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.filebrowser.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.filtercell.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.filtermenu.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.fx.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.gantt.list.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.gantt.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.gantt.timeline.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.grid.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.groupable.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.imagebrowser.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.list.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.listview.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.maskedtextbox.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.mediaplayer.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.menu.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.mobile.actionsheet.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.mobile.application.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.mobile.button.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.mobile.buttongroup.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.mobile.collapsible.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.mobile.drawer.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.mobile.listview.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.mobile.loader.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.mobile.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.mobile.modalview.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.mobile.navbar.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.mobile.pane.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.mobile.popover.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.mobile.scroller.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.mobile.scrollview.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.mobile.shim.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.mobile.splitview.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.mobile.switch.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.mobile.tabstrip.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.mobile.view.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.multiselect.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.notification.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.numerictextbox.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.ooxml.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.pager.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.panelbar.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.pdf.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.pivot.configurator.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.pivot.fieldmenu.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.pivotgrid.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.popup.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.progressbar.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.reorderable.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.resizable.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.responsivepanel.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.router.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.scheduler.agendaview.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.scheduler.dayview.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.scheduler.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.scheduler.monthview.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.scheduler.recurrence.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.scheduler.timelineview.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.scheduler.view.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.selectable.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.slider.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.sortable.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.splitter.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.spreadsheet.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.tabstrip.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.timepicker.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.timezones.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.toolbar.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.tooltip.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.touch.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.treelist.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.treeview.draganddrop.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.treeview.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.upload.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.userevents.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.validator.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.view.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.virtuallist.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.web.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.webcomponents.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\kendo.window.min.js" />
+    <Content Include="Scripts\KendoTrialScripts\pako_deflate.min.js" />
+    <Content Include="Scripts\Kendo\kendo.all.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.en-AU.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.en-US.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.en-ZA.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.en.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.es-ES.min.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.fr-CA.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.zh-Hans.js" />
+    <Content Include="Scripts\Kendo\kendo.culture.zh-Hant.js" />
+    <Content Include="Scripts\Kendo\kendo.custom.min.js" />
+    <Content Include="Scripts\Kendo\kendo.messages.es-ES.js" />
+    <Content Include="Scripts\Kendo\kendo.messages.fr-CA.js" />
+    <Content Include="Scripts\Kendo\kendo.messages.zh-Hans.js" />
+    <Content Include="Scripts\Kendo\kendo.messages.zh-Hant.js" />
+    <Content Include="Scripts\Kendo\kendo.messsages.en-AU.js" />
+    <Content Include="Scripts\Kendo\kendo.messsages.en-US.js" />
+    <Content Include="Scripts\Kendo\kendo.messsages.en-ZA.js" />
+    <Content Include="Scripts\Kendo\knockout-kendo.js" />
+    <Content Include="Scripts\Kendo\knockout-kendo.min.js" />
+    <Content Include="Scripts\knockout\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout\knockout-2.1.0.js" />
+    <Content Include="Scripts\knockout\knockout-kendo.min.js" />
+    <Content Include="Scripts\knockout\knockout.mapping-latest.debug.js" />
+    <Content Include="Scripts\knockout\knockout.mapping-latest.js" />
+    <Content Include="Scripts\knockout\Sage.CA.SBS.Sage300.Custom.BindingHandlers.js" />
+    <Content Include="Scripts\knockout\Sage.CA.SBS.Sage300.Custom.KnockoutExtension.js" />
+    <Content Include="Scripts\Less\less-1.6.1.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -282,7 +470,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -314,6 +504,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\" />
+    <Folder Include="Content\themes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

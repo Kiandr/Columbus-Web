@@ -1,8 +1,16 @@
-﻿using System.Web;
+﻿#region Libraries
+using System.Web;
 using System.Web.Optimization;
+#endregion
 
+/// <summary>
+/// Configuration for Bundles and Css, and Js
+/// </summary>
 namespace NND.CA.Web
 {
+    /// <summary>
+    /// Add all you main frameworks in this location. This is being used for main project. Rest of projects are being IoCed using MS Unity framework. 
+    /// </summary>
     public class BundleConfig
     {
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
@@ -11,19 +19,26 @@ namespace NND.CA.Web
             # region JS MainWebProject
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/DefaultMvc/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
+                        "~/Scripts/DefaultMvc/jquery.validate*"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+                        "~/Scripts/DefaultMvc/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/DefaultMvc/bootstrap.js",
+                      "~/Scripts/DefaultMvc/respond.js"));
+            #endregion
+
+            #region
+            bundles.Add(new ScriptBundle("~/bundles/jQuery").Include(
+                    "~/Scripts/DefaultMvc/bootstrap.js",
+                    "~/Scripts/DefaultMvc/respond.js"));
+
             #endregion
 
             #region CSS MainWebProject
@@ -33,10 +48,45 @@ namespace NND.CA.Web
                       "~/Content/DefaultMvc/site.css"));
             #endregion
 
-            #region Framework KendoUI Js
-            bundles.Add(new ScriptBundle("~/bundles/kendo").Include("~/Scripts/Kendo/kendo.all.min.js"));
+            #region Framework KendoUI Js Sage
+            bundles.Add(new ScriptBundle("~/bundles/kendoSage").Include(
+                // Add jQuery prior KendoUI 
+               "~/Scripts/DefaultMvc/jquery-{version}.js",
+                "~/Scripts/Kendo/kendo.all.min.js",
+                "~/Scripts/Kendo/kendo.culture.en.min.js"
+                //"~/Scripts/Kendo/knockout-kendo.js",
+                //"~/Scripts/Kendo/kendo.custom.min.js",
+                //"~/Scripts/Kendo/knockout-kendo.js"
+
+
+                ));
             #endregion
 
+            #region FrameWork KendoUI Css
+            bundles.Add(new StyleBundle("~/Content/kendo/cssSage").Include(
+               "~/Content/Styles/Kendo/kendo.common.less",
+                "~/Content/Styles/Kendo/kendo.common.min.css",
+                 "~/Content/Styles/Kendo/kendo.default.less",
+                  "~/Content/Styles/Kendo/kendo.default.ming.css"));
+            #endregion
+            #region FrameWork Js Telerik DEMO-TRIAL License
+            bundles.Add(new ScriptBundle("~/bundles/kendoTrialDemo").Include(
+                // Add jQuery prior KendoUI 
+              "~/Scripts/DefaultMvc/jquery-{version}.js",
+              // Add Chroma Lib, used for Kendo UI
+              "~/Scripts/Chroma/chroma.min.js",
+              "~/Scripts/KendoTrialScripts/kendo.all.min.js",
+              "~/Scripts/KendoTrialScripts/kendo.color.min.js",
+               "~/Scripts/KendoTrialScripts/kendo.aspnetmvc.min.js"
+
+
+
+
+
+
+              ));
+
+            #endregion
 
         }
     }
