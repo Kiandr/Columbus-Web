@@ -260,6 +260,7 @@
     <Content Include="Content\DefaultMvc\bootstrap.min.css" />
     <Content Include="Content\DefaultMvc\Site.css" />
     <Content Include="Content\Styles\Kendo\kendo.common.min.css" />
+    <Content Include="Content\Styles\Kendo\kendo.default.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
