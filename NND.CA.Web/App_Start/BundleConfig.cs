@@ -85,7 +85,10 @@ namespace NND.CA.Web
 			
 			#region FrameWork KendoUI Css
             bundles.Add(new StyleBundle("~/Content/kendo/cssKendo").Include(
-            "~/Content/Styles/Kendo/kendo.common.min.css"
+            "~/Content/Styles/Kendo/kendo.common.min.css",
+            "~/Content/Styles/Kendo/kendo.default.min.css"
+
+
 
             // "~/Content/Styles/Kendo/kendo.default.less",
             // "~/Content/Styles/Kendo/kendo.default.ming.css"
