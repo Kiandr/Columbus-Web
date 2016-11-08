@@ -16,7 +16,8 @@ namespace NND.CA.Web
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            # region JS MainWebProject
+            #region JS 
+            #region JS MainWebProject
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/DefaultMvc/jquery-{version}.js"));
@@ -33,45 +34,28 @@ namespace NND.CA.Web
                       "~/Scripts/DefaultMvc/bootstrap.js",
                       "~/Scripts/DefaultMvc/respond.js"));
             #endregion
-
-            #region
+            #region Jquery
             bundles.Add(new ScriptBundle("~/bundles/jQuery").Include(
                     "~/Scripts/DefaultMvc/bootstrap.js",
                     "~/Scripts/DefaultMvc/respond.js"));
 
             #endregion
-
-            #region CSS MainWebProject
-            // This is the css for the main project
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/DefaultMvc/bootstrap.css",
-                      "~/Content/DefaultMvc/site.css"));
-            #endregion
-
             #region Framework KendoUI Js Sage
             bundles.Add(new ScriptBundle("~/bundles/kendoSage").Include(
-                // Add jQuery prior KendoUI 
+               // Add jQuery prior KendoUI 
                "~/Scripts/DefaultMvc/jquery-{version}.js",
                 "~/Scripts/Kendo/kendo.all.min.js",
                 "~/Scripts/Kendo/kendo.culture.en.min.js"
-                //"~/Scripts/Kendo/knockout-kendo.js",
-                //"~/Scripts/Kendo/kendo.custom.min.js",
-                //"~/Scripts/Kendo/knockout-kendo.js"
+                "~/Scripts/Kendo/knockout-kendo.js",
+                "~/Scripts/Kendo/kendo.custom.min.js",
+                "~/Scripts/Kendo/knockout-kendo.js"
 
 
                 ));
-            #endregion
 
-            #region FrameWork KendoUI Css
-            bundles.Add(new StyleBundle("~/Content/kendo/cssSage").Include(
-               "~/Content/Styles/Kendo/kendo.common.less",
-                "~/Content/Styles/Kendo/kendo.common.min.css",
-                 "~/Content/Styles/Kendo/kendo.default.less",
-                  "~/Content/Styles/Kendo/kendo.default.ming.css"));
-            #endregion
             #region FrameWork Js Telerik DEMO-TRIAL License
             bundles.Add(new ScriptBundle("~/bundles/kendoTrialDemo").Include(
-                // Add jQuery prior KendoUI 
+              // Add jQuery prior KendoUI 
               "~/Scripts/DefaultMvc/jquery-{version}.js",
               // Add Chroma Lib, used for Kendo UI
               "~/Scripts/Chroma/chroma.min.js",
@@ -87,6 +71,29 @@ namespace NND.CA.Web
               ));
 
             #endregion
+            #endregion
+            #endregion
+            #region CSS
+
+            #region CSS MainWebProject
+            // This is the css for the main project
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/DefaultMvc/bootstrap.css",
+                      "~/Content/DefaultMvc/site.css"));
+            #endregion
+
+            #region FrameWork KendoUI Css
+            bundles.Add(new StyleBundle("~/Content/kendo/cssSage").Include(
+               "~/Content/Styles/Kendo/kendo.common.less",
+                "~/Content/Styles/Kendo/kendo.common.min.css",
+                 "~/Content/Styles/Kendo/kendo.default.less",
+                  "~/Content/Styles/Kendo/kendo.default.ming.css"));
+            #endregion
+
+            #endregion
+
+
+
 
         }
     }
