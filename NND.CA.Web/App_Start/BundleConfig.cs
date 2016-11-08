@@ -2,7 +2,6 @@
 using System.Web;
 using System.Web.Optimization;
 #endregion
-
 /// <summary>
 /// Configuration for Bundles and Css, and Js
 /// </summary>
@@ -41,36 +40,30 @@ namespace NND.CA.Web
 
             #endregion
             #region Framework KendoUI Js Sage
-            bundles.Add(new ScriptBundle("~/bundles/kendoSage").Include(
+            bundles.Add(new ScriptBundle("~/bundles/kendo/kendoSage").Include(
                // Add jQuery prior KendoUI 
                "~/Scripts/DefaultMvc/jquery-{version}.js",
                 "~/Scripts/Kendo/kendo.all.min.js",
-                "~/Scripts/Kendo/kendo.culture.en.min.js"
-                "~/Scripts/Kendo/knockout-kendo.js",
-                "~/Scripts/Kendo/kendo.custom.min.js",
-                "~/Scripts/Kendo/knockout-kendo.js"
-
+                "~/Scripts/Kendo/kendo.culture.en.min.js",
+                //"~/Scripts/Kendo/knockout-kendo.js",
+                "~/Scripts/Kendo/kendo.custom.min.js"
+                // "~/Scripts/Kendo/knockout-kendo.js"
+                // "~/Scripts/Kendo/knockout-kendo.js"
 
                 ));
-
+            #endregion
             #region FrameWork Js Telerik DEMO-TRIAL License
             bundles.Add(new ScriptBundle("~/bundles/kendoTrialDemo").Include(
               // Add jQuery prior KendoUI 
               "~/Scripts/DefaultMvc/jquery-{version}.js",
               // Add Chroma Lib, used for Kendo UI
               "~/Scripts/Chroma/chroma.min.js",
+              // KendoUI All
               "~/Scripts/KendoTrialScripts/kendo.all.min.js",
-              "~/Scripts/KendoTrialScripts/kendo.color.min.js",
-               "~/Scripts/KendoTrialScripts/kendo.aspnetmvc.min.js"
-
-
-
-
-
-
+             // KnockOut MVVM binder
+             "~/Scripts/knockout/knockout_341.js"
               ));
 
-            #endregion
             #endregion
             #endregion
             #region CSS
@@ -78,23 +71,31 @@ namespace NND.CA.Web
             #region CSS MainWebProject
             // This is the css for the main project
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/DefaultMvc/bootstrap.css",
-                      "~/Content/DefaultMvc/site.css"));
+            "~/Content/DefaultMvc/bootstrap.css",
+            "~/Content/DefaultMvc/site.css"));
             #endregion
 
             #region FrameWork KendoUI Css
             bundles.Add(new StyleBundle("~/Content/kendo/cssSage").Include(
-               "~/Content/Styles/Kendo/kendo.common.less",
-                "~/Content/Styles/Kendo/kendo.common.min.css",
-                 "~/Content/Styles/Kendo/kendo.default.less",
-                  "~/Content/Styles/Kendo/kendo.default.ming.css"));
+            "~/Content/Styles/Kendo/kendo.common.less",
+            "~/Content/Styles/Kendo/kendo.common.min.css",
+            "~/Content/Styles/Kendo/kendo.default.less",
+            "~/Content/Styles/Kendo/kendo.default.ming.css"));
+            #endregion
+			
+			#region FrameWork KendoUI Css
+            bundles.Add(new StyleBundle("~/Content/kendo/cssKendo").Include(
+            "~/Content/Styles/Kendo/kendo.common.min.css"
+
+            // "~/Content/Styles/Kendo/kendo.default.less",
+            // "~/Content/Styles/Kendo/kendo.default.ming.css"
+            ));
             #endregion
 
             #endregion
-
-
-
-
         }
     }
 }
+
+
+
