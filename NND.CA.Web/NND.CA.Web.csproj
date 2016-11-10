@@ -286,11 +286,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Scripts\Chroma\chroma.min.js" />
+    <Content Include="Scripts\Common\Repository\NND.CA.Web.Common.Repository.js" />
     <Content Include="Scripts\DefaultMvc\jquery-1.10.2.min.map" />
     <Content Include="Content\Styles\Kendo\common-template.less" />
     <Content Include="Content\Styles\Kendo\kendo.common.less" />
     <Content Include="Content\Styles\Kendo\kendo.default.less" />
     <Content Include="Content\Styles\Kendo\theme-template.less" />
+    <Content Include="Scripts\Common\Models\NND.CA.Web.Common.Models.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\DefaultMvc\ai.0.22.19-build00125.js" />
     <Content Include="Scripts\DefaultMvc\ai.0.22.19-build00125.min.js" />
