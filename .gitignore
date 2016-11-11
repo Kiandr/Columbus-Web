@@ -251,3 +251,5 @@ paket-files/
 .idea/
 *.sln.iml
 /NND.CA.Web/Areas/DV/Views/Partials
+/NND.CA.Web/Areas/DV/Scripts/NND.CA.DV.KoExtn.js
+/NND.CA.Web/Areas/DV/Scripts/NND.CA.DV.Repository.js
