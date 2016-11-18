@@ -549,6 +549,10 @@
       <Project>{c8e1eca7-e38a-48f4-9b3b-2707963f1bb1}</Project>
       <Name>NND.CA.DV.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Columbus-DV\NND.CA.DV.Services\NND.CA.DV.Services.csproj">
+      <Project>{d383a9a4-f2ba-4b8e-b42f-d8ebd40ebbdc}</Project>
+      <Name>NND.CA.DV.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Columbus-Framework\Common\Sage.CA.SBS.ERP.Sage300.Common.Interfaces\Sage.CA.SBS.ERP.Sage300.Common.Interfaces.csproj">
       <Project>{2df9d920-e05a-44fe-91c7-4fce7b3a2b28}</Project>
       <Name>Sage.CA.SBS.ERP.Sage300.Common.Interfaces</Name>

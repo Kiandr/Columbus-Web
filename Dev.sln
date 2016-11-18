@@ -21,6 +21,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sage.CA.SBS.ERP.Sage300.VPF.Web", "..\Columbus-VPF\VPF\Sage.CA.SBS.ERP.Sage300.VPF.Web.csproj", "{FD03C389-F1C4-41BB-834B-B001B68090BE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NND.CA.DV.Web", "..\Columbus-DV\DV\NND.CA.DV.Web.csproj", "{F934046A-ADC0-45D8-BE26-E41107898F4D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D383A9A4-F2BA-4B8E-B42F-D8EBD40EBBDC} = {D383A9A4-F2BA-4B8E-B42F-D8EBD40EBBDC}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sage.CA.SBS.ERP.Sage300.Common.Interfaces", "..\Columbus-Framework\Common\Sage.CA.SBS.ERP.Sage300.Common.Interfaces\Sage.CA.SBS.ERP.Sage300.Common.Interfaces.csproj", "{2DF9D920-E05A-44FE-91C7-4FCE7B3A2B28}"
 EndProject
