@@ -99,6 +99,12 @@
       <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NND.WebApi">
+      <HintPath>..\..\Assemblies\NND.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="NND.WebApi.Models">
+      <HintPath>..\..\Assemblies\NND.WebApi.Models.dll</HintPath>
+    </Reference>
     <Reference Include="Sage.CA.SBS.ERP.Sage300.VPF.Web">
       <HintPath>..\..\Assemblies\Sage.CA.SBS.ERP.Sage300.VPF.Web.dll</HintPath>
     </Reference>
