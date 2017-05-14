@@ -253,3 +253,6 @@ paket-files/
 /NND.CA.Web/Areas/DV/Views/Partials
 /NND.CA.Web/Areas/DV/Scripts/NND.CA.DV.KoExtn.js
 /NND.CA.Web/Areas/DV/Scripts/NND.CA.DV.Repository.js
+/NND.CA.Web/Areas/WebApi/Views/Shared/_Layout.cshtml
+/NND.CA.Web/Areas/WebApi/Views/Web.config
+/NND.CA.Web/Areas/WebApi/Views/_ViewStart.cshtml
