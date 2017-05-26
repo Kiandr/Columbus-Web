@@ -559,6 +559,10 @@
       <Project>{d383a9a4-f2ba-4b8e-b42f-d8ebd40ebbdc}</Project>
       <Name>NND.CA.DV.Services</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Columbus-Framework\Common\NND.CA.Common.Web\NND.CA.Common.Web.csproj">
+      <Project>{7E1A2F26-8E5C-4E72-890C-6D72E535DB7E}</Project>
+      <Name>NND.CA.Common.Web</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Columbus-Framework\Common\Sage.CA.SBS.ERP.Sage300.Common.Interfaces\Sage.CA.SBS.ERP.Sage300.Common.Interfaces.csproj">
       <Project>{2df9d920-e05a-44fe-91c7-4fce7b3a2b28}</Project>
       <Name>Sage.CA.SBS.ERP.Sage300.Common.Interfaces</Name>
@@ -582,15 +586,14 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>59385</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:59721/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost/</CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

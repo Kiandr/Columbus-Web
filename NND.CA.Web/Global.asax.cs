@@ -8,6 +8,8 @@ using System.Web.Routing;
 using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Bootstrap;
 using System.IO;
 using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
+using System.Data.Entity;
+using NND.CA.Common.Web.DBAccess;
 //using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.App_Start;
 
 namespace NND.CA.Web
@@ -29,7 +31,11 @@ namespace NND.CA.Web
 
             // Register unity configuration
             BootstrapConfig.Register();
-
+            
+            // Use next to sync EntityFrameWork (DbContext) with Database model.  May25th2017 KDR
+            //  Database.SetInitializer<ShrekDbContext>(new DropCreateDatabaseAlways<ShrekDbContext>());
+            
+            
             // Register our custom controller factory
             //var pathBin = HttpContext.Current.Server.MapPath("~/bin");
             //var bootStrapperFile = Path.Combine(HttpContext.Current.Server.MapPath("~"), "bootstrapper.xml");
