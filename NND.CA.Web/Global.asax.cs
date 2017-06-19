@@ -33,7 +33,7 @@ namespace NND.CA.Web
             BootstrapConfig.Register();
             
             // Use next to sync EntityFrameWork (DbContext) with Database model.  May25th2017 KDR
-            //  Database.SetInitializer<ShrekDbContext>(new DropCreateDatabaseAlways<ShrekDbContext>());
+          //    Database.SetInitializer<ShrekDbContext>(new DropCreateDatabaseAlways<ShrekDbContext>());
             
             
             // Register our custom controller factory
