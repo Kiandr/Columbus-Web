@@ -32,8 +32,8 @@ namespace NND.CA.Web
             // Register unity configuration
             BootstrapConfig.Register();
             
-            // Use next to sync EntityFrameWork (DbContext) with Database model.  May25th2017 KDR
-          //    Database.SetInitializer<ShrekDbContext>(new DropCreateDatabaseAlways<ShrekDbContext>());
+            // Use next to sync EntityFrameWork (DbContext) with Database model.  May25th2017 KDR findme FINDME
+              Database.SetInitializer<ShrekDbContext>(new DropCreateDatabaseAlways<ShrekDbContext>());
             
             
             // Register our custom controller factory
