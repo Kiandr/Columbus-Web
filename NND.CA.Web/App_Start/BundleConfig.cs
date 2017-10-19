@@ -71,7 +71,7 @@ namespace NND.CA.Web
             #region CSS MainWebProject
             // This is the css for the main project
             bundles.Add(new StyleBundle("~/Content/css").Include(
-            "~/Content/DefaultMvc/bootstrap.css",
+            "~/Content/DefaultMvc/bootstrap.min.css",
             "~/Content/DefaultMvc/site.css"));
             #endregion
 
