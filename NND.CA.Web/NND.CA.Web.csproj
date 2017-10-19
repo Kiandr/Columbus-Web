@@ -317,6 +317,14 @@
     <Content Include="Scripts\DefaultMvc\respond.min.js" />
     <None Include="Scripts\DefaultMvc\_references.js" />
     <Content Include="Scripts\DragandDrop\modernizr.custom.08307.js" />
+    <Content Include="Scripts\Google\AuthenticateFireBase.js" />
+    <Content Include="Scripts\Google\firebase-app.js" />
+    <Content Include="Scripts\Google\firebase-auth.js" />
+    <Content Include="Scripts\Google\firebase-database.js" />
+    <Content Include="Scripts\Google\firebase-firestore.js" />
+    <Content Include="Scripts\Google\firebase-messaging.js" />
+    <Content Include="Scripts\Google\firebase.js" />
+    <Content Include="Scripts\Google\jquery-3.2.1.min.js" />
     <Content Include="Scripts\jasmine\boot.js" />
     <Content Include="Scripts\jasmine\console.js" />
     <Content Include="Scripts\jasmine\jasmine-html.js" />
@@ -529,6 +537,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <Content Include="Views\Home\PartialViews\GoogleFireBase.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
