@@ -65,15 +65,33 @@ namespace NND.CA.Web
               ));
 
             #endregion
+            #region Google FireBase SDK
+            bundles.Add(new ScriptBundle("~/bundles/googleFireBase").Include(
+              // This requires latest Jquery Library
+              "~/Scripts/Google/jquery-3.2.1.min.js",
+              "~/Scripts/Google/firebase-app.js",
+              "~/Scripts/Google/firebase-auth.js",
+              "~/Scripts/Google/firebase-database.js",
+              "~/Scripts/Google/firebase-firestore.js",
+              "~/Scripts/Google/firebase-messaging.js",
+              "~/Scripts/Google/firebase.js",
+              "~/Scripts/Google/AuthenticateFireBase.js"
+
+
+              ));
+
+            #endregion
             #endregion
             #region CSS
 
             #region CSS MainWebProject
             // This is the css for the main project
             bundles.Add(new StyleBundle("~/Content/css").Include(
-            "~/Content/DefaultMvc/bootstrap.css",
+            "~/Content/DefaultMvc/bootstrap.min.css",
             "~/Content/DefaultMvc/site.css"));
             #endregion
+
+
 
             #region FrameWork KendoUI Css
             bundles.Add(new StyleBundle("~/Content/kendo/cssSage").Include(

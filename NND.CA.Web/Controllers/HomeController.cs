@@ -12,6 +12,7 @@ namespace NND.CA.Web.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.Title = "Nurse Next Door";
             return View();
         }
 

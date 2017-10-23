@@ -317,6 +317,14 @@
     <Content Include="Scripts\DefaultMvc\respond.min.js" />
     <None Include="Scripts\DefaultMvc\_references.js" />
     <Content Include="Scripts\DragandDrop\modernizr.custom.08307.js" />
+    <Content Include="Scripts\Google\AuthenticateFireBase.js" />
+    <Content Include="Scripts\Google\firebase-app.js" />
+    <Content Include="Scripts\Google\firebase-auth.js" />
+    <Content Include="Scripts\Google\firebase-database.js" />
+    <Content Include="Scripts\Google\firebase-firestore.js" />
+    <Content Include="Scripts\Google\firebase-messaging.js" />
+    <Content Include="Scripts\Google\firebase.js" />
+    <Content Include="Scripts\Google\jquery-3.2.1.min.js" />
     <Content Include="Scripts\jasmine\boot.js" />
     <Content Include="Scripts\jasmine\console.js" />
     <Content Include="Scripts\jasmine\jasmine-html.js" />
@@ -529,11 +537,13 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <Content Include="Views\Account\Partials\GoogleFireBaseLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\" />
     <Folder Include="Content\themes\" />
+    <Folder Include="Views\Home\PartialViews\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -586,13 +596,15 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>59385</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:59721/</IISUrl>
+          <IISUrl>http://localhost:59385/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:59385/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>True</UseCustomServer>
+          <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>http://localhost/</CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
