@@ -537,12 +537,13 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
-    <Content Include="Views\Home\PartialViews\GoogleFireBase.cshtml" />
+    <Content Include="Views\Account\Partials\GoogleFireBaseLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\" />
     <Folder Include="Content\themes\" />
+    <Folder Include="Views\Home\PartialViews\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
