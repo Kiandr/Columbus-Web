@@ -73,10 +73,11 @@ namespace NND.CA.Web
               "~/Scripts/Google/firebase-auth.js",
               "~/Scripts/Google/firebase-database.js",
               "~/Scripts/Google/firebase-firestore.js",
-              "~/Scripts/Google/firebase-messaging.js",
-              "~/Scripts/Google/firebase.js",
-              "~/Scripts/Google/AuthenticateFireBase.js",
-              "~/Scripts/Google/loader.js"
+
+            //  "~/Scripts/Google/firebase.js",
+              "~/Scripts/Google/AuthenticateFireBase.js"
+                        //    "~/Scripts/Google/firebase-messaging.js"
+            //  "~/Scripts/Google/loader.js"
 
 
               ));

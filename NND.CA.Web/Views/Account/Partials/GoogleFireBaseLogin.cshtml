@@ -1,16 +1,12 @@
-﻿@Styles.Render("~/Content/css")
+﻿<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-app.js"></script>
+@Styles.Render("~/Content/css")
 @Scripts.Render("~/bundles/googleFireBase")
 
 @{
     ViewBag.Title = "GoogleFireBase";
 }
 
-<h1>GoogleFireBase</h1>
-<div id="GoogleFireBase"> Use google creadentials to log in. </div>
-<input type="submit" id ="googleLogin" value="Google Login" class="btn btn-default"/>
 
-
-@*
 <button id="singin" onclick="CallGoogleSinIn()"> Google Single Sing In </button>
 <button id="singin" onclick="CallGoogleSinOut()"> Google Single Sing Out</button>
 <div id="timeline" style="height: 180px; margin: auto;"></div>
@@ -259,6 +255,7 @@
 
 
     };
+
     var config = {
     apiKey: "AIzaSyBRGDNklfhLgeYdMutMuOQnv3jqfDyCRj0",
     authDomain: "nursenextdoor-ad735.firebaseapp.com",
@@ -266,7 +263,8 @@
     projectId: "nursenextdoor-ad735",
     storageBucket: "nursenextdoor-ad735.appspot.com",
     messagingSenderId: "142428877752"
-  };
+  
+    };
     function addPic(url) {
       debugger;
       $('#theDiv').prepend($('<img>', { id: 'theImg', src: url }));
@@ -277,7 +275,7 @@
       $('#error').append(string);
 
   };
-    firebase.initializeApp(config);
+   // firebase.initializeApp(config);
     //Handle Account Status
     firebase.auth().onAuthStateChanged(user => {
       debugger;
@@ -547,7 +545,6 @@
 
 
 
-*/*@
 
 
 
