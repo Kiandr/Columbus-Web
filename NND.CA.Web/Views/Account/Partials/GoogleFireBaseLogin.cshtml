@@ -6,9 +6,9 @@
     ViewBag.Title = "GoogleFireBase";
 }
 
-
-<button id="singin" onclick="CallGoogleSinIn()"> Google Single Sing In </button>
-<button id="singin" onclick="CallGoogleSinOut()"> Google Single Sing Out</button>
+<h2>Nurse Next Door  Signin via Google</h2>
+<button id="singin" onclick="CallGoogleSinIn()" class="btn btn-default"> Google Single Sing In </button>
+<button id="singin" onclick="CallGoogleSinOut()" class="btn btn-defaultt"> Google Single Sing Out</button>
 <div id="timeline" style="height: 180px; margin: auto;"></div>
 <div id="example5.2" style="height: 300px;margin: auto;"></div>
 <div id="regions_div" style="width: 900px; height: 500px;     margin: auto;"></div>
@@ -19,7 +19,7 @@
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-
+@*
 <script>
     /*
     Auhtor: Kian D.Rad
@@ -27,7 +27,7 @@
     README: loading three different google maps.
     */
 
-
+    /*
     function KianPerform() {
         google.charts.load('current', { 'packages': ['gauge'] });
         google.charts.setOnLoadCallback(drawChart);
@@ -195,47 +195,8 @@
         }
 
     };
-    function thirdManPerform() {
-
-
-        google.charts.load('current', { 'packages': ['gauge'] });
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-
-            var data = google.visualization.arrayToDataTable([
-              ['Label', 'Value'],
-              ['NPS', 0],
-              ['Intakes', 0],
-              ['ScoreCard', 0]
-            ]);
-
-            var options = {
-                width: 400, height: 120,
-                redFrom: 90, redTo: 100,
-                yellowFrom: 75, yellowTo: 90,
-                minorTicks: 5
-            };
-
-            var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
-
-            chart.draw(data, options);
-
-            setInterval(function () {
-                data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
-                chart.draw(data, options);
-            }, 13000);
-            setInterval(function () {
-                data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
-                chart.draw(data, options);
-            }, 5000);
-            setInterval(function () {
-                data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
-                chart.draw(data, options);
-            }, 26000);
-        }
-
-    };
+    function thirdManPerform()
+    */
     // Initialize Firebase
     /*
     Auhtor: Kian D.Rad
@@ -243,6 +204,18 @@
     ReadMe: Test file, to authenticate the firebase
     ToDO: Take out this to javascript file with propoer data models
     */
+
+    var config = {
+        apiKey: "AIzaSyC8KloedMvZLdSqUMk74oE7IM0SF9bJCrw",
+        authDomain: "idermatoscope.firebaseapp.com",
+        databaseURL: "https://idermatoscope.firebaseio.com",
+        projectId: "idermatoscope",
+        storageBucket: "idermatoscope.appspot.com",
+        messagingSenderId: "960111575797"
+    };
+
+    firebase.initializeApp(config);
+
     function CallGoogleSinIn() {
 
         console.log("singInToGoogleNow");
@@ -275,10 +248,10 @@
       $('#error').append(string);
 
   };
-   // firebase.initializeApp(config);
-    //Handle Account Status
+
+
+
     firebase.auth().onAuthStateChanged(user => {
-      debugger;
       if(user) {
 
           console.log(user);
@@ -294,7 +267,7 @@
       // [START authstatelistener]
     firebase.auth().onAuthStateChanged(function (user) {
       debugger;
-      alert("here");
+     // alert("here");
           if (user) {
               // User is signed in.
               var displayName = user.displayName;
@@ -366,6 +339,7 @@
     Date: Oct 20th 2017
     README: bar graph chart, it loads based on user.
     */
+    /*
   function POCBarChartKian() {
 
       google.charts.load('current', { 'packages': ['bar'] });
@@ -538,7 +512,7 @@
       }
   };
 
-
+  */
 
 </script>
 
@@ -554,7 +528,7 @@
 
 
 
-
+*@
 
 
 

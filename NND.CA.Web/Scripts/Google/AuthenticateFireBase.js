@@ -8,11 +8,22 @@ Date: Oct 17th 2017
 ReadMe: Test file, to authenticate the firebase
 ToDO: Take out this to javascript file with propoer data models
 */
+var userModel = new function () {
+    this.displayName = "macintosh";
+    this.email = "red";
+    this.isAnonymous = false;
+    this.phoneNumber = "";
+    this.photoURL = "";
+    this.uid = "";
+    this.emailVerified = "";
+    this.refreshToken = "";
+    this.providerData = "";
+  //  this.verifiedEmail = function () {
+  //      return this.color + ' ' + this.type + ' apple';
+   // };
+}
 
-alert("here");
-debugger;
-
-    var config = {
+var config = {
         apiKey: "AIzaSyC8KloedMvZLdSqUMk74oE7IM0SF9bJCrw",
         authDomain: "idermatoscope.firebaseapp.com",
         databaseURL: "https://idermatoscope.firebaseio.com",
@@ -20,91 +31,74 @@ debugger;
         storageBucket: "idermatoscope.appspot.com",
         messagingSenderId: "960111575797"
     };
+firebase.initializeApp(config);
 
-    firebase.initializeApp(config);
+function CallGoogleSinIn() {
 
-   
- 
-
-    function CallGoogleSinIn() {
-        var defaultStorage = defaultApp.storage();
-        var defaultDatabase = defaultApp.database();
-        debugger;
     var provider = new firebase.auth.GoogleAuthProvider();
-
     firebase.auth().signInWithRedirect(provider);
     provider.addScope('https://www.googleapis.com/auth/plus.login');
     firebase.auth().languageCode = 'el';
     firebase.auth().signInWithRedirect(provider);
-    provider.setCustomParameters({
-        'login_hint': 'user@example.com'
-    });
-
-    // You can retrieve services via the defaultApp variable...
-    var defaultStorage = defaultApp.storage();
-    var defaultDatabase = defaultApp.database();
-    firebase.auth().getRedirectResult().then(function (result) {
-        if (result.credential) {
-            // This gives you a Google Access Token. You can use it to access the Google API.
-            var token = result.credential.accessToken;
-            // ...
-        }
-        // The signed-in user info.
-        var user = result.user;
-    }).catch(function (error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-        // ...
-    });
-};
-
-function signinExistingUser() {
-
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
-    });
 };
 
 
-
-
-
-
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            // User is signed in.
-            var displayName = user.displayName;
-            var email = user.email;
-            var emailVerified = user.emailVerified;
-            var photoURL = user.photoURL;
-            var isAnonymous = user.isAnonymous;
-            var uid = user.uid;
-            var providerData = user.providerData;
-            // ...
-        } else {
-            // User is signed out.
-            // ...
-        }
-    });
-
-
-
-
-$(document).ready(function () {
-    // Handler for .ready() called.
-
-    $("#googleLogin").click(function () {
+// Listening for auth state changes.
+// [START authstatelistener]
+firebase.auth().onAuthStateChanged(function (user) {
+    debugger;
+    // alert("here");
+    if (user) {
+        // User is signed in.
+        userModel.displayName = user.displayName;
+        userModel.email = user.email;
+        userModel.emailVerified = user.emailVerified;
+        userModel.photoURL = user.photoURL;
+        userModel.isAnonymous = user.isAnonymous;
+        userModel.uid = user.uid;
+        userModel.providerData = user.providerData;
+        userModel.refreshToken = user.refreshToken;
+        userModel.photoURL = user.photoURL;
+        userModel.phoneNumber = user.phoneNumber;
         debugger;
-        CallGoogleSinIn();
-        alert("Handler for .click() called.");
-    });
+
+        // [START_EXCLUDE]
+     //   document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
+    //    document.getElementById('quickstart-sign-in').textContent = 'Sign out';
+        //              document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+
+        // [END_EXCLUDE]
+    } else {
+        // User is signed out.
+        // [START_EXCLUDE]
+    //    document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
+    //    document.getElementById('quickstart-sign-in').textContent = 'Sign in with GitHub';
+    //    document.getElementById('quickstart-account-details').textContent = 'null';
+    //    document.getElementById('quickstart-oauthtoken').textContent = 'null';
+        // [END_EXCLUDE]
+    }
+    // [START_EXCLUDE]
+
+    // [END_EXCLUDE]
 });
+// [END authstatelistener]
+
+function CallGoogleSinOut() {
+
+    firebase.auth().signOut().then(function () {
+        // Sign-out successful.
+        debugger;
+        $('#theImg').remove();
+        thirdMan();
+
+    }).catch(function (error) {
+        // An error happened.
+        writeError("failed singout!");
+    });
+
+
+};
+
+
+
 
