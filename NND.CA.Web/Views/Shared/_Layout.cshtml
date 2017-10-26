@@ -24,6 +24,8 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                   
+                    @*
+
 
                   @foreach (var item in ViewData["userObject"]  as List<NND.CA.Common.Model.SystemUser>)
                     {
@@ -38,11 +40,11 @@
 
                                                @* @item.authentifcationmethod
                                              authorizedMenuItems.Add(new MenuItem() { TitleString ="Kian's Profile", ControllerName = "Home", MethodName ="LoadDashBoard" });
-                                            *@
+                                            
                    
                     }
-
-
+                    *@
+                 
 
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>

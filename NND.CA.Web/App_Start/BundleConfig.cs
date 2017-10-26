@@ -45,10 +45,22 @@ namespace NND.CA.Web
                "~/Scripts/DefaultMvc/jquery-{version}.js",
                 "~/Scripts/Kendo/kendo.all.min.js",
                 "~/Scripts/Kendo/kendo.culture.en.min.js",
-                //"~/Scripts/Kendo/knockout-kendo.js",
                 "~/Scripts/Kendo/kendo.custom.min.js"
-                // "~/Scripts/Kendo/knockout-kendo.js"
-                // "~/Scripts/Kendo/knockout-kendo.js"
+
+                ));
+            #endregion
+
+            #region KnockOut
+            bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
+               // Add jQuery prior KendoUI 
+               "~/Scripts/DefaultMvc/jquery-{version}.js",
+                "~/Scripts/knockout/knockout.mapping-latest.debug.js",
+                "~/Scripts/knockout/knockout.mapping-latest.js",
+                "~/Scripts/knockout/knockout_341s.js",
+                "~/Scripts/knockout/knockout-2.1.0.debug.js",
+                "~/Scripts/knockout/knockout-3.0.0.debug.js",
+                "~/Scripts/knockout/knockout-3.4.2.js",
+                "~/Scripts/knockout/knockout-kendo.min.js"
 
                 ));
             #endregion
