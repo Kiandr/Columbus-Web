@@ -10,7 +10,7 @@
 }
 
 <h2>Nurse Next Door  Signin via Google</h2>
-<button id="singin" onclick="CallGoogleSinIn()" class="btn btn-default"> Google Single Sing In </button>
+<button id="singin" data-bind="visible: shouldShowSingInMessage" onclick="CallGoogleSinIn()" class="btn btn-default"> Google Single Sing In </button>
 <button id="singout"   data-bind="visible: shouldShowSingOutMessage" onclick="CallGoogleSinOut()" class="btn btn-defaultt"> Google Single Sing Out</button>
 <div data-bind="visible: shouldShowMessage">
     You will see this message only when "shouldShowMessage" holds a true value.

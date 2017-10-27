@@ -49,6 +49,7 @@ var ViewModelUser = function (user) {
     this.userImage = ko.observable(user.photoURL);
     this.shouldShowMessage = ko.observable(false); // Message initially visible //shouldShowSingOutMessage
     this.shouldShowSingOutMessage = ko.observable(false);
+    this.shouldShowSingOutMessage = ko.observable(true);
     
     this.welcomingMessage = ko.pureComputed(function () {
         // Knockout tracks dependencies automatically. It knows that fullName depends on firstName and lastName, because these get called when evaluating fullName.
