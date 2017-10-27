@@ -1,4 +1,25 @@
-﻿@using NND.CA.Web.Models
+﻿<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-app.js"></script>
+
+<script>
+
+    var config = {
+        apiKey: "AIzaSyC8KloedMvZLdSqUMk74oE7IM0SF9bJCrw",
+        authDomain: "idermatoscope.firebaseapp.com",
+        databaseURL: "https://idermatoscope.firebaseio.com",
+        projectId: "idermatoscope",
+        storageBucket: "idermatoscope.appspot.com",
+        messagingSenderId: "960111575797"
+    };
+
+</script>
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/googleFireBase")
+<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-app.js"></script>
+
+
+
+@using NND.CA.Web.Models
 @model LoginViewModel
 @{
     ViewBag.Title = "Log in";

@@ -1,7 +1,23 @@
-﻿@{
+﻿<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-app.js"></script>
+<script>
+
+    var config = {
+        apiKey: "AIzaSyC8KloedMvZLdSqUMk74oE7IM0SF9bJCrw",
+        authDomain: "idermatoscope.firebaseapp.com",
+        databaseURL: "https://idermatoscope.firebaseio.com",
+        projectId: "idermatoscope",
+        storageBucket: "idermatoscope.appspot.com",
+        messagingSenderId: "960111575797"
+    };
+    firebase.initializeApp(config);
+
+</script>
+@{
     ViewBag.Title = "Home Page";
 }
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <div class="jumbotron">
     <h1>ASP.NET</h1>
     <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>

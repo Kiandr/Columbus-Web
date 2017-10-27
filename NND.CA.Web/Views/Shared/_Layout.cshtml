@@ -8,6 +8,8 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
+
+
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -21,6 +23,29 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                  
+                    @*
+
+
+                  @foreach (var item in ViewData["userObject"]  as List<NND.CA.Common.Model.SystemUser>)
+                    {
+
+                        foreach (var authorizedMenuItems in item.authorizedMenuItems as List <NND.CA.Common.Model.MenuItem>)
+
+                        {
+                          <li>
+                            @Html.ActionLink((String)authorizedMenuItems.TitleString, (String)authorizedMenuItems.MethodName, new { parameter = @item.authentifcationmethod })
+                          </li>
+                        }
+
+                                               @* @item.authentifcationmethod
+                                             authorizedMenuItems.Add(new MenuItem() { TitleString ="Kian's Profile", ControllerName = "Home", MethodName ="LoadDashBoard" });
+                                            
+                   
+                    }
+                    *@
+                 
+
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>

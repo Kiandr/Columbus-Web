@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using Sage.CA.SBS.ERP.Sage300.Common.Web;
 using NND.CA.DV.Models;
+using NND.CA.Common.Web.Menu;
+using NND.CA.Common.Model;
+using NND.CA.Common.Model.Enums;
 
 namespace NND.CA.Web.Controllers
 {
@@ -12,8 +15,14 @@ namespace NND.CA.Web.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Nurse Next Door";
-            return View();
+
+            List<SystemUser> user = new List<SystemUser>() {  };
+
+            user.Add(new SystemUser(SecurityType.Admin, UserAuthenticationMethod.FaceBook));
+            user.Add(new SystemUser(SecurityType.Admin, UserAuthenticationMethod.FaceBook));
+
+            ViewData[ "userObject"] = user;
+            return View(user);
         }
 
         public ActionResult About()
