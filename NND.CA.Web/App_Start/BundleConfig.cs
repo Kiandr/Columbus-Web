@@ -42,6 +42,7 @@ namespace NND.CA.Web
             #region Framework KendoUI Js Sage
             bundles.Add(new ScriptBundle("~/bundles/kendo/kendoSage").Include(
                // Add jQuery prior KendoUI 
+               "~/Scripts/knockout/knockout_342.js",
                "~/Scripts/DefaultMvc/jquery-{version}.js",
                 "~/Scripts/Kendo/kendo.all.min.js",
                 "~/Scripts/Kendo/kendo.culture.en.min.js",
@@ -54,13 +55,19 @@ namespace NND.CA.Web
             bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
                // Add jQuery prior KendoUI 
                "~/Scripts/DefaultMvc/jquery-{version}.js",
-                "~/Scripts/knockout/knockout.mapping-latest.debug.js",
-                "~/Scripts/knockout/knockout.mapping-latest.js",
-                "~/Scripts/knockout/knockout_341s.js",
-                "~/Scripts/knockout/knockout-2.1.0.debug.js",
-                "~/Scripts/knockout/knockout-3.0.0.debug.js",
-                "~/Scripts/knockout/knockout-3.4.2.js",
-                "~/Scripts/knockout/knockout-kendo.min.js"
+                "~/Scripts/DefaultMvc/respond.js",
+                "~/Scripts/Google/jquery-3.2.1.min.js",
+               "~/Scripts/DefaultMvc/bootstrap.js",
+                "~/Scripts/knockout/knockout_210.js",
+                "~/Scripts/knockout/knockout_210_debug.js",
+                "~/Scripts/knockout/knockout_300Debug.js",
+                "~/Scripts/knockout/knockout_341.js",
+                "~/Scripts/knockout/knockout_342.js",
+                "~/Scripts/knockout/knockout_kendo_min.js",
+                "~/Scripts/knockout/knockout_mapping_atest_debug.js",
+                "~/Scripts/knockout/knockout_mapping-latest.debug.js",
+                "~/Scripts/knockout/knockout_mapping_latest.js"
+
 
                 ));
             #endregion

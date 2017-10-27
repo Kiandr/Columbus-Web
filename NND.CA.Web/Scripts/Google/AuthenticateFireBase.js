@@ -8,20 +8,7 @@ Date: Oct 17th 2017
 ReadMe: Test file, to authenticate the firebase
 ToDO: Take out this to javascript file with propoer data models
 */
-var userModel = new function () {
-    this.displayName = "macintosh";
-    this.email = "red";
-    this.isAnonymous = false;
-    this.phoneNumber = "";
-    this.photoURL = "";
-    this.uid = "";
-    this.emailVerified = "";
-    this.refreshToken = "";
-    this.providerData = "";
-  //  this.verifiedEmail = function () {
-  //      return this.color + ' ' + this.type + ' apple';
-   // };
-}
+
 
 var config = {
         apiKey: "AIzaSyC8KloedMvZLdSqUMk74oE7IM0SF9bJCrw",
@@ -30,7 +17,9 @@ var config = {
         projectId: "idermatoscope",
         storageBucket: "idermatoscope.appspot.com",
         messagingSenderId: "960111575797"
-    };
+};
+
+
 firebase.initializeApp(config);
 
 function CallGoogleSinIn() {
@@ -43,62 +32,62 @@ function CallGoogleSinIn() {
 };
 
 
+var ViewModel = function (first, last) {
+    this.firstName = ko.observable(first);
+    this.lastName = ko.observable(last);
+
+    this.welcomingMessage = ko.pureComputed(function () {
+        // Knockout tracks dependencies automatically. It knows that fullName depends on firstName and lastName, because these get called when evaluating fullName.
+        return this.firstName() + " " + this.lastName();
+    }, this);
+};
+
+var ViewModelUser = function (user) {
+    debugger;
+    this.displayName = ko.observable(user.displayName);
+    this.email = ko.observable(user.email);
+    this.userImage = ko.observable(user.photoURL);
+    this.shouldShowMessage = ko.observable(false); // Message initially visible //shouldShowSingOutMessage
+    this.shouldShowSingOutMessage = ko.observable(false);
+    
+    this.welcomingMessage = ko.pureComputed(function () {
+        // Knockout tracks dependencies automatically. It knows that fullName depends on firstName and lastName, because these get called when evaluating fullName.
+        return "Hello " +this.displayName() + " Its pleasure to have you with us.  ";
+    }, this);
+};
+
+//var userDataModel = new function (incomingUserDataModel) {
+//    debugger;
+//    this.displayName = ko.observable(incomingUserDataModel.displayName);
+//    this.email = ko.observable(incomingUserDataModel.email);
+//    this.isAnonymous = ko.observable(incomingUserDataModel.isAnonymous);
+//    this.phoneNumber = ko.observable(incomingUserDataModel.phoneNumber);
+//    this.photoURL = ko.observable(incomingUserDataModel.photoURL);
+//    this.uid = ko.observable(incomingUserDataModel.uid);
+//    this.emailVerified = ko.observable(incomingUserDataModel.emailVerified);
+//    this.refreshToken = ko.observable(incomingUserDataModel.refreshToken);
+//    this.providerData = ko.observable(incomingUserDataModel.providerData);
+
+//}
+
+
 // Listening for auth state changes.
 // [START authstatelistener]
 firebase.auth().onAuthStateChanged(function (user) {
     debugger;
     // alert("here");
     if (user) {
-        // User is signed in.
-        userModel.displayName = user.displayName;
-        userModel.email = user.email;
-        userModel.emailVerified = user.emailVerified;
-        userModel.photoURL = user.photoURL;
-        userModel.isAnonymous = user.isAnonymous;
-        userModel.uid = user.uid;
-        userModel.providerData = user.providerData;
-        userModel.refreshToken = user.refreshToken;
-        userModel.photoURL = user.photoURL;
-        userModel.phoneNumber = user.phoneNumber;
-        debugger;
+      //  ko.applyBindings(new ViewModel("Planet", "Earth")); // This makes Knockout get to work
+        ko.applyBindings(new ViewModelUser(user)); // This makes Knockout get to work
 
-        // [START_EXCLUDE]
-     //   document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-    //    document.getElementById('quickstart-sign-in').textContent = 'Sign out';
-        //              document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
-
-        // [END_EXCLUDE]
     } else {
-        // User is signed out.
-        // [START_EXCLUDE]
-    //    document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-    //    document.getElementById('quickstart-sign-in').textContent = 'Sign in with GitHub';
-    //    document.getElementById('quickstart-account-details').textContent = 'null';
-    //    document.getElementById('quickstart-oauthtoken').textContent = 'null';
-        // [END_EXCLUDE]
-    }
-    // [START_EXCLUDE]
 
-    // [END_EXCLUDE]
+    }
+
 });
 // [END authstatelistener]
 
 
-
-firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
-  .then(function () {
-      // Existing and future Auth states are now persisted in the current
-      // session only. Closing the window would clear any existing state even
-      // if a user forgets to sign out.
-      // ...
-      // New sign-in will be persisted with session persistence.
-      return firebase.auth().signInWithRedirect(provider);
-  })
-  .catch(function (error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-  });
 
 function CallGoogleSinOut() {
 
@@ -115,7 +104,4 @@ function CallGoogleSinOut() {
 
 
 };
-
-
-
 

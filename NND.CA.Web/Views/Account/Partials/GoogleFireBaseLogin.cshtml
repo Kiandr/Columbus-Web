@@ -1,4 +1,6 @@
 ﻿<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-app.js"></script>
+<script src="http://knockoutjs.com/downloads/knockout-3.0.0.debug.js" type="text/javascript"></script>
+
 @Styles.Render("~/Content/css")
 @Scripts.Render("~/bundles/googleFireBase")
 @Scripts.Render("~/bundles/knockout")
@@ -9,12 +11,16 @@
 
 <h2>Nurse Next Door  Signin via Google</h2>
 <button id="singin" onclick="CallGoogleSinIn()" class="btn btn-default"> Google Single Sing In </button>
-<button id="singin" onclick="CallGoogleSinOut()" class="btn btn-defaultt"> Google Single Sing Out</button>
+<button id="singout"   data-bind="visible: shouldShowSingOutMessage" onclick="CallGoogleSinOut()" class="btn btn-defaultt"> Google Single Sing Out</button>
+<div data-bind="visible: shouldShowMessage">
+    You will see this message only when "shouldShowMessage" holds a true value.
+</div>
 
+<img data-bind="attr:{ src: userImage }" style="width:128px;height:128px"/>
 
-<p>First name: <input data-bind="value: firstName" /></p>
-<p>Last name: <input data-bind="value: lastName" /></p>
-<h2>Hello, <span data-bind="text: fullName"> </span>!</h2>
+<p>Full Name: <input data-bind="value: displayName" /></p>
+<p>Email: <input data-bind="value: email" /></p>
+<h2> <span data-bind="text: welcomingMessage"> </span></h2>
 
 <div id="timeline" style="height: 180px; margin: auto;"></div>
 <div id="example5.2" style="height: 300px;margin: auto;"></div>
@@ -29,27 +35,28 @@
 
 
 
+
 <script>
 
-    $(window).load(function () {
-        // Run code
-        alert("loaded");
-    // Here's my data model
-        var ViewModel = function (first, last) {
-            this.firstName = ko.observable(first);
-            this.lastName = ko.observable(last);
+    //$(window).load(function () {
+    //    // Run code
+    //    alert("loaded");
+    //// Here's my data model
+    //    var ViewModel = function (first, last) {
+    //        this.firstName = ko.observable(first);
+    //        this.lastName = ko.observable(last);
 
-            this.fullName = ko.computed(function () {
-                // Knockout tracks dependencies automatically. It knows that fullName depends on firstName and lastName, because these get called when evaluating fullName.
-                return this.firstName() + " " + this.lastName();
-            }, this);
-        };
+    //        this.fullName = ko.computed(function () {
+    //            // Knockout tracks dependencies automatically. It knows that fullName depends on firstName and lastName, because these get called when evaluating fullName.
+    //            return this.firstName() + " " + this.lastName();
+    //        }, this);
+    //    };
 
-        ko.applyBindings(new ViewModel("Planet", "Earth")); // This makes Knockout get to work
+    //    ko.applyBindings(new ViewModel("Planet", "Earth")); // This makes Knockout get to work
 
 
     
-    });
+    //});
 
 </script>
 
