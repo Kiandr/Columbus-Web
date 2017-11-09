@@ -50,7 +50,6 @@ namespace NND.CA.Web
 
                 ));
             #endregion
-
             #region KnockOut
             bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
                // Add jQuery prior KendoUI 
@@ -63,7 +62,6 @@ namespace NND.CA.Web
                 "~/Scripts/knockout/knockout_300Debug.js",
                 "~/Scripts/knockout/knockout_341.js",
                 "~/Scripts/knockout/knockout_342.js",
-                "~/Scripts/knockout/knockout_kendo_min.js",
                 "~/Scripts/knockout/knockout_mapping_atest_debug.js",
                 "~/Scripts/knockout/knockout_mapping-latest.debug.js",
                 "~/Scripts/knockout/knockout_mapping_latest.js"

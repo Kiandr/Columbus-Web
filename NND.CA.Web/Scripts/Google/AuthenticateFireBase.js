@@ -43,33 +43,37 @@ var ViewModel = function (first, last) {
 };
 
 var ViewModelUser = function (user) {
-    debugger;
+
     this.displayName = ko.observable(user.displayName);
     this.email = ko.observable(user.email);
     this.userImage = ko.observable(user.photoURL);
-    this.shouldShowMessage = ko.observable(false); // Message initially visible //shouldShowSingOutMessage
-    this.shouldShowSingOutMessage = ko.observable(false);
-    this.shouldShowSingOutMessage = ko.observable(true);
-    
+    this.pictureShow = ko.observable(true);
+    this.shouldShowMessageIn = ko.observable(false);
+    this.shouldShowMessageOut = ko.observable(true);
     this.welcomingMessage = ko.pureComputed(function () {
         // Knockout tracks dependencies automatically. It knows that fullName depends on firstName and lastName, because these get called when evaluating fullName.
         return "Hello " +this.displayName() + " Its pleasure to have you with us.  ";
     }, this);
 };
 
-//var userDataModel = new function (incomingUserDataModel) {
-//    debugger;
-//    this.displayName = ko.observable(incomingUserDataModel.displayName);
-//    this.email = ko.observable(incomingUserDataModel.email);
-//    this.isAnonymous = ko.observable(incomingUserDataModel.isAnonymous);
-//    this.phoneNumber = ko.observable(incomingUserDataModel.phoneNumber);
-//    this.photoURL = ko.observable(incomingUserDataModel.photoURL);
-//    this.uid = ko.observable(incomingUserDataModel.uid);
-//    this.emailVerified = ko.observable(incomingUserDataModel.emailVerified);
-//    this.refreshToken = ko.observable(incomingUserDataModel.refreshToken);
-//    this.providerData = ko.observable(incomingUserDataModel.providerData);
 
-//}
+var ViewModelUserdefault = function () {
+
+    $("#pictureShow").get().ko.observable(false);
+    $("#shouldShowMessageOut").get().ko.observable(false);
+
+};
+
+  function CallGoogleSinOut() {
+      firebase.auth().signOut().then(function () {
+          ViewModelUser.shouldShowMessageIn(false);
+      }).catch(function (error) {
+          // An error happened.
+          console.log("failed singout!"+error);
+      });
+  };
+
+
 
 
 // Listening for auth state changes.
@@ -89,20 +93,4 @@ firebase.auth().onAuthStateChanged(function (user) {
 // [END authstatelistener]
 
 
-
-function CallGoogleSinOut() {
-
-    firebase.auth().signOut().then(function () {
-        // Sign-out successful.
-        debugger;
-        $('#theImg').remove();
-        thirdMan();
-
-    }).catch(function (error) {
-        // An error happened.
-        writeError("failed singout!");
-    });
-
-
-};
 

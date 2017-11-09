@@ -495,6 +495,9 @@
     <Content Include="Scripts\knockout\knockout-kendo.min.js" />
     <Content Include="Scripts\knockout\knockout.mapping-latest.debug.js" />
     <Content Include="Scripts\knockout\knockout.mapping-latest.js" />
+    <Content Include="Scripts\LandingPage\HomePageBehaviour.js" />
+    <Content Include="Scripts\LandingPage\HomePageKoExtn.js" />
+    <Content Include="Scripts\LandingPage\HomePageRepository.js" />
     <Content Include="Scripts\Less\less-1.6.1.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
@@ -600,7 +603,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>59385</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
