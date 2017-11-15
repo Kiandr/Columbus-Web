@@ -58,11 +58,11 @@ namespace NND.CA.Web
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "960111575797-nq70qbictfj4pkgtvkf1qrt56rddrsr1.apps.googleusercontent.com",
+                ClientSecret = "J8HewaH4gp89WuMn6PsMpoMD"
+            });
         }
     }
 }
