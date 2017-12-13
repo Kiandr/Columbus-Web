@@ -1,7 +1,91 @@
 ﻿"use strict";
+var constants = { token: null };
+var googleConstants = { config: null }
+var googleService = {
+    init: function () {
+        googleConstants.config = {
+            apiKey: "AIzaSyC8KloedMvZLdSqUMk74oE7IM0SF9bJCrw",
+            authDomain: "idermatoscope.firebaseapp.com",
+            databaseURL: "https://idermatoscope.firebaseio.com",
+            projectId: "idermatoscope",
+            storageBucket: "idermatoscope.appspot.com",
+            messagingSenderId: "960111575797"
+        }
+        debugger;
+        firebase.initializeApp(googleConstants.config);
+    },
+    googleSingIn: function () {
 
-function registerUser(ViewModelUser) {
-    debugger;
+    },
+    googleSingOut: function () {
+
+    },
+    googleRegisterNewUser: function () {
+        debugger;
+        console.log("directing to google");
+        var provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithRedirect(provider);
+        provider.addScope('https://www.googleapis.com/auth/plus.login');
+        firebase.auth().languageCode = 'el';
+        firebase.auth().signInWithRedirect(provider);
+
+    }
+};
+
+
+var services = {
+    init: function () {
+        // init the services
+        this.setToken();
+        this.setRegister();
+        // inite the google and dependencies
+        googleService.init();
+        // user this class
+    },
+    registerNewUser: function () {
+        console.log("Envoked new registeration");
+        googleService.googleRegisterNewUser();
+    },
+    printToken: function () {
+    },
+    setToken: function () {
+        console.log($('input[name="__RequestVerificationToken"]').val());
+        constants.token = $('input[name="__RequestVerificationToken"]').val();
+    },
+    setRegister: function () {
+      
+        $("#register").click(function () {
+            debugger;
+            console.log(constants.token);
+            // becuase it a call back function shall user the name of the class
+            services.registerNewUser();
+
+        });
+     }
+};
+
+
+// on document load 
+$(document).ready(function () {
+    console.log(" Document is ready!");
+    services.init();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+    services.RegisterNewUser = function(ViewModelUser) {
     console.log(ViewModelUser);
     token = $('input[name="__RequestVerificationToken"]').val();
 
@@ -75,7 +159,7 @@ firebase.initializeApp(config);
 function CallGoogleSinOut() {
     debugger;
     firebase.auth().signOut().then(function () {
-      //  ViewModelUser.shouldShowMessageIn(false);
+        //  ViewModelUser.shouldShowMessageIn(false);
     }).catch(function (error) {
         // An error happened.
         console.log("failed singout!" + error);
@@ -119,7 +203,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     debugger;
     // alert("here");
     if (user) {
-      //  ko.applyBindings(new ViewModel("Planet", "Earth")); // This makes Knockout get to work
+        //  ko.applyBindings(new ViewModel("Planet", "Earth")); // This makes Knockout get to work
         ko.applyBindings(new ViewModelUser(user)); // This makes Knockout get to work
         // call to server to register user in the local Db
         registerUser(user);
@@ -128,3 +212,5 @@ firebase.auth().onAuthStateChanged(function (user) {
     }
     // [END authstatelistener]
 });
+
+*/

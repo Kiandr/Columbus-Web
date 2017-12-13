@@ -99,6 +99,21 @@ namespace NND.CA.Web
 
               ));
 
+            #region Register ViewPage
+            bundles.Add(new ScriptBundle("~/bundles/RegisterView").Include(
+            // This requires latest Jquery Library
+            "~/Scripts/Google/jquery-3.2.1.min.js",
+            "~/Scripts/Google/firebase-app.js",
+            "~/Scripts/Google/firebase-auth.js",
+            "~/Scripts/Google/firebase-database.js",
+            "~/Scripts/Google/firebase-firestore.js",
+            "~/Scripts/Google/Register/Register.js",
+            "~/Scripts/Google/firebase-messaging.js",
+            "~/Scripts/Google/loader.js"
+
+
+  ));
+            #endregion
             #endregion
             #endregion
             #region CSS

@@ -325,6 +325,8 @@
     <Content Include="Scripts\Google\firebase-messaging.js" />
     <Content Include="Scripts\Google\firebase.js" />
     <Content Include="Scripts\Google\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\Google\Register\Register.js" />
+    <Content Include="Scripts\Google\Register\RegisterReposiroty.js" />
     <Content Include="Scripts\jasmine\boot.js" />
     <Content Include="Scripts\jasmine\console.js" />
     <Content Include="Scripts\jasmine\jasmine-html.js" />
